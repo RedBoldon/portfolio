@@ -20,3 +20,15 @@ main{
     width: 75vh;
     margin: 0 auto;
 }
+
+footer {
+    height: 50px;
+    width: 100%;
+    background-color: var(--primarycolor);
+    display: flex;
+    align-items: center;
+}
+
+#footertext {
+    margin-left:20px;
+}
