@@ -6,6 +6,46 @@ body{
     width: 100%;
 }
 
+.header {
+    grid-area: header;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.image-section{
+    grid-area: image;
+}
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header"
+    "hero"
+    "image"
+    "footer";
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "hero image"
+      "footer footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 header{
     background-color: var(--primarycolor);
     width: 100%;
@@ -16,9 +56,9 @@ header{
     backdrop-filter: blur(10px);
 }
 
-main{
-    width: 75vh;
-    margin: 0 auto;
+.image-section img {
+    max-width: 100%;
+    height: auto;
 }
 
 footer {
