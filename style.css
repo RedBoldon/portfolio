@@ -1,7 +1,10 @@
 :root {
   --primarycolor: rgba(216, 100, 213, 0.5);
+  --colorneutral: rgba(216, 100, 213, 0.6);
+  --colorhighlight: rgba(216, 100, 213, 0.8);
   --gap: 20px;
   --font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 
@@ -11,20 +14,45 @@ body{
     width: 100%;
 }
 
+h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.hero h2{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
 .header{
     grid-area: header;
 }
 
 .title {
     grid-area: title;
+    align-self: center;
+    justify-self: center;
+}
+
+.linebreak{
+    display: none;
 }
 
 .main-nav {
     grid-area: nav;
+    align-self: center;
 }
 
 .hero {
     grid-area: hero;
+    height: auto;
+    max-height: 80vh;
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .footer {
@@ -71,10 +99,15 @@ body{
       "contact contact"
       "footer footer";
   }
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+@media (max-width: 761px){
+    .linebreak{
+    display: block;
+}
+h1 {
+    font-size: 3rem;
+}
 }
 
 header{
@@ -90,7 +123,24 @@ header{
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "title nav";
+}
 
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: black;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: var(--colorneutral);
+    transition: background-color 0.3s ease;
+}
+
+nav ul a:hover{
+    background-color: var(--colorhighlight);
 }
 
 .image-section img {
