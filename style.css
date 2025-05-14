@@ -35,6 +35,10 @@ body{
     grid-area: image;
 }
 
+.contact-form{
+    grid-area: contact;
+}
+
 .wrapper {
   display: grid;
   gap: var(--gap);
@@ -45,12 +49,26 @@ body{
     "footer";
 }
 
+.contact .wrapper {
+    grid-template-areas: 
+    "header"
+    "contact"
+    "footer";
+}
+
 @media (min-width: 500px) {
   .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "header header"
       "hero image"
+      "footer footer";
+  }
+  .contact .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "contact contact"
       "footer footer";
   }
   nav ul {
