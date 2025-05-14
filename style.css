@@ -1,13 +1,26 @@
+:root {
+  --primarycolor: rgba(216, 100, 213, 0.5);
+  --gap: 20px;
+  --font-size: 16px;
+}
+
+
 body{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
     Helvetica, Arial, "Lucida Grande", sans-serif;
-    --primarycolor: rgba(216, 100, 213, 0.5);
-    font-size: 16px;
     width: 100%;
 }
 
-.header {
+.header{
     grid-area: header;
+}
+
+.title {
+    grid-area: title;
+}
+
+.main-nav {
+    grid-area: nav;
 }
 
 .hero {
@@ -24,7 +37,7 @@ body{
 
 .wrapper {
   display: grid;
-  gap: 20px;
+  gap: var(--gap);
   grid-template-areas:
     "header"
     "hero"
@@ -54,6 +67,12 @@ header{
     top: 0;
     z-index: 1;
     backdrop-filter: blur(10px);
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title nav";
+
 }
 
 .image-section img {
