@@ -22,7 +22,7 @@ h1{
     font-weight: 600;
 }
 
-.hero h2{
+.hero h2, .about h2{
     display:flex;
     justify-content: space-around;
     flex-direction: column;
@@ -72,15 +72,49 @@ h1{
     grid-area: ham;
 }
 
+.intro{
+    grid-area: intro;
+}
+.images{
+    grid-area: images;
+}
+.quote1{
+    grid-area: quote1;
+}
+.quote2{
+    grid-area: quote2;
+}
+.quote3{
+    grid-area: quote3;
+}
+.img1{
+    grid-area: img1;
+}
+.img2{
+    grid-area: img2;
+}
+.img3{
+    grid-area: img3;
+}
+.subtitle{
+    grid-area: subtitle;
+}
+.emptydiv{
+    grid-area: emptydiv;
+}
+
 .wrapper {
   display: grid;
   gap: var(--gap);
-  grid-template-areas:
+  min-height: 100%;
+}
+
+.index .wrapper{
+    grid-template-areas:
     "header"
     "hero"
     "image"
     "footer";
-  min-height: 100%;
 }
 
 html{
@@ -93,6 +127,20 @@ html{
     grid-template-areas: 
     "header"
     "contact"
+    "footer";
+    min-height: 100%;
+}
+
+.about .wrapper{
+    grid-template-areas:
+    "header"
+    "subtitle"
+    "quote1"
+    "img1"
+    "quote2"
+    "img2"
+    "quote3"
+    "img3"
     "footer";
     min-height: 100%;
 }
@@ -135,7 +183,7 @@ nav ul a:hover{
     background-color: var(--colorhighlight);
 }
 
-.image-section img {
+.image-section img, .about .wrapper img {
     max-width: 100%;
     height: auto;
 }
@@ -151,32 +199,30 @@ nav ul a:hover{
     overflow: auto;
 }
 
-label{
-    justify-self: end;
-}
+
 
 input[type=text]{
-    width: 99%;
-    height: 1rem;
+    width: 98%;
+    height: 1.5rem;
+    justify-self: center;
+    box-sizing: border-box;
 }
 
 input[type=submit]{
-   
+   height: 3rem;
 }
 
 .contact-form form > label, input[type=text], input[type=submit]{
     margin: 7px 0;
     box-sizing: border-box;
 }
-
-
-
 textarea{
     box-sizing: border-box;
-    width: 99%;
+    width: 98%;
     overflow: auto;
     height: auto;
-    resize: vertical;
+    resize: none;
+    justify-self: center;
 }
 
 footer {
@@ -193,7 +239,7 @@ footer {
 }
 
 @media only screen and (min-width: 500px) {
-  .wrapper {
+  .index .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "header header"
@@ -207,6 +253,16 @@ footer {
       ". contact ."
       "footer footer footer";
   }
+  .about .wrapper{
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    "header header header header"
+    ". subtitle img1 ."
+    ". img2 quote1 ."
+    ". quote2 img3 ."
+    ". quote3 quote3 ."
+    "footer footer footer footer";
+  }
 }
 
 @media only screen and (min-width: 800px){
@@ -216,9 +272,15 @@ footer {
   .submitButton{
     grid-column-start: 2;
 }
+textarea{
+    resize: vertical;
+}
 }
 
 @media only screen and (max-width: 792px){
+
+
+
     .linebreak{
     display: block;
 }
@@ -321,5 +383,4 @@ h1 {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 }
