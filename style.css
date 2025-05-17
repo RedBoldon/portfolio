@@ -288,7 +288,7 @@ textarea{
 }
 
 .projects div > h3, p, button{
-    margin: 7px 0 7px 7px;
+    margin: 7px 7px 7px 7px;
 }
 
 .projects div button{
@@ -358,9 +358,15 @@ textarea{
 .contact-form form > label{
     margin-left: 0;
 }
+
+.projects div{
+    grid-template-areas: 
+    "projectTitle ."
+    "projectDesc projectButton";
+}
 }
 
-@media only screen and (max-width: 792px){
+@media only screen and (max-width: 799px){
 .projects div{
     grid-template-areas: 
     "projectTitle"
@@ -368,6 +374,15 @@ textarea{
     "projectButton";
 }
 
+.projects h3{
+    justify-self: center;
+}
+
+.projects div button{
+    justify-self: center;
+    width: 98%;
+    height: 25px;
+}
 
     .linebreak{
     display: block;
