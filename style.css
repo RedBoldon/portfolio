@@ -188,6 +188,29 @@ nav ul a:hover{
     height: auto;
 }
 
+.nameLabel{
+    grid-area: nameL;
+}
+.nameField{
+    grid-area: nameF;
+}
+.emailLabel{
+    grid-area: emailL;
+}
+.emailField{
+    grid-area: emailF;
+}
+.messageLabel{
+    grid-area: messageL;
+}
+.textInput{
+    grid-area: messageF;
+}
+.submitButton{
+    grid-area: submit;
+}
+
+
 .contact-form{
     overflow: auto;
 }
@@ -197,9 +220,15 @@ nav ul a:hover{
     width: 100%;
     gap:var(--gap);
     overflow: auto;
+    grid-template-areas: 
+    "nameL"
+    "nameF"
+    "emailL"
+    "emailF"
+    "messageL"
+    "messageF"
+    "submit";
 }
-
-
 
 input[type=text]{
     width: 98%;
@@ -268,10 +297,15 @@ footer {
 @media only screen and (min-width: 800px){
     .contact-form form{
     grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+    grid-template-areas: 
+    "nameL nameF ."
+    "emailL emailF ."
+    "messageL messageF ."
+    ". submit .";
   }
-  .submitButton{
-    grid-column-start: 2;
-}
+  .emailLabel, .messageLabel, .nameLabel{
+    justify-self: end;
+  }
 textarea{
     resize: vertical;
 }
