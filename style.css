@@ -265,6 +265,16 @@ textarea{
     justify-self: center;
 }
 
+.project-title{
+    grid-area: projectTitle;
+}
+.project-description{
+    grid-area: projectDesc;
+}
+.see-more{
+    grid-area: projectButton;
+}
+
 .projects{
     display: grid;
     gap:var(--gap);
@@ -351,7 +361,12 @@ textarea{
 }
 
 @media only screen and (max-width: 792px){
-
+.projects div{
+    grid-template-areas: 
+    "projectTitle"
+    "projectDesc"
+    "projectButton";
+}
 
 
     .linebreak{
