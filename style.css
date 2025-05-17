@@ -241,9 +241,12 @@ input[type=submit]{
    height: 3rem;
 }
 
-.contact-form form > label, input[type=text], input[type=submit]{
+.contact-form form > input[type=text], input[type=submit]{
     margin: 7px 0;
     box-sizing: border-box;
+}
+.contact-form form > label{
+    margin: 7px 0px 7px 7px;
 }
 textarea{
     box-sizing: border-box;
@@ -308,6 +311,9 @@ footer {
   }
 textarea{
     resize: vertical;
+}
+.contact-form form > label{
+    margin-left: 0;
 }
 }
 
