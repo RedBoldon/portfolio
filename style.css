@@ -102,6 +102,9 @@ h1{
 .emptydiv{
     grid-area: emptydiv;
 }
+.projects{
+    grid-area: projects;
+}
 
 .wrapper {
   display: grid;
@@ -128,7 +131,13 @@ html{
     "header"
     "contact"
     "footer";
-    min-height: 100%;
+}
+
+.projectview .wrapper{
+    grid-template-areas: 
+    "header"
+    "projects"
+    "footer";
 }
 
 .about .wrapper{
@@ -142,7 +151,6 @@ html{
     "quote3"
     "img3"
     "footer";
-    min-height: 100%;
 }
 
 header{
@@ -256,6 +264,31 @@ textarea{
     resize: none;
     justify-self: center;
 }
+
+.projects{
+    display: grid;
+    gap:var(--gap);
+    grid-auto-flow: row;
+}
+
+.projects div{
+    background-color: var(--primarycolor);
+    min-height: 100px;
+    display: grid;
+}
+
+.projects div > h3, p, button{
+    margin: 7px 0 7px 7px;
+}
+
+.projects div button{
+    justify-self: end;
+    align-self: center;
+    height: 75px;
+    width: 75px;
+}
+
+
 
 footer {
     height: 50px;
